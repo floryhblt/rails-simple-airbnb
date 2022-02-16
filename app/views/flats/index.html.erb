@@ -1,0 +1,30 @@
+<div class="navbar" class="border-bottom"> 
+  <h3> Simple Airbnb </h3>
+  <%= link_to "Add flat", new_flat_path, :class => "btn btn-outline-primary" %>
+</div>
+
+
+<h1> All our Flats (<%= Flat.count %>) </h1>
+<div class="row">
+    <% @flats.each do |flat| %>
+        <div class="col-sm-6">
+            <div class= "card"> 
+                <div class="card-header">
+                    <h2 class="card-title"><%= flat.name %></h2>
+                </div>
+                <div class="card-body">
+                    <p class="card-text"> 
+                        <%= flat.description %>
+                        <%= flat.address %> 
+                    </p>
+                    <p class="card-details">
+                        <%= flat.price_per_night %>
+                        <%= flat.number_of_guests %>
+                    </p>
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div>
+
+
